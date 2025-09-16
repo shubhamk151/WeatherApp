@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
-    <h1>Weather App</h1>
-    
+
+    <section class="header">
+        <div class="logo">
+            <img src="assets/logo.min.svg" alt="logo" />
+        </div>
+        <div class="search">
+            <h1>Weather app with api integration</h1>
+            <form>
+                <input type="text" placeholder="Enter your city">
+                <button>Search</button>
+            </form>
+        </div>
+        <div class="empty"></div>
+
+    </section>
+
+    <section class="content">
+
+        <div class="currDayData">
+
+            <img src="assets/rain.jpg" />
+
+            <div class="weatherData">
+                <h2>Sep 16, 07:48 am <br>
+                    <span>Mumbai, IN</span>
+                    <p>Feels like 24&degC. MOderate rain. Light air</p>
+                </h2>
+                <div class="data">
+                    <div class="cdata1">
+                        <p><i class="fa-solid fa-cloud-sun"></i> 26&degC</p>
+                    </div>
+                    <div class="cdata2">
+                        <p><i class="fa-solid fa-wind"></i> 6.7km/h</p>
+                        <p><i class="fa-solid fa-cloud-rain"></i> 1.04mm</p>
+                        <p><i class="fa-solid fa-cloud-sun"></i> Humidity: 94%</p>
+                        <p><i class="fa-solid fa-water"></i> Dew point: 22&degC</p>
+                        <p><i class="fa-solid fa-eye"></i> Visibility: 1.5km</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="forecastDayData"></div>
+    </section>
+    <section class="footer"></section>
+
+    <footer>
+
+        <a href="https://github.com/yourusername">github</a>
+        <p>Made with <i class="fa-solid fa-heart"></i>by Shubham kakade</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>

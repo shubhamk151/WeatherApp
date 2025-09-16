@@ -1,3 +1,230 @@
-*{
-    background-color: aqua;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(170, 245, 248, 1) 0%,
+    rgba(248, 162, 239, 0.8) 90%
+  );
+  line-height: 2.5;
+}
+
+.logo {
+  height: 45px;
+  width: 250px;
+  padding-left: 2rem;
+}
+
+.header form {
+  padding-bottom: 20px;
+  margin-left: -2rem;
+}
+
+.header h1 {
+  margin-left: -2rem;
+  font-family: cursive;
+}
+
+.header input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  min-width: 290px;
+}
+
+.header button {
+  background: #cd34db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.currDayData {
+  height: 80vh;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-image: linear-gradient(
+    102.8deg,
+    rgba(140, 235, 252, 1) 12.3%,
+    rgba(248, 193, 232, 1) 48.6%,
+    rgba(252, 244, 211, 1) 85.1%
+  );
+}
+
+.currDayData img {
+  height: 24rem;
+  width: 25rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 14px;
+}
+
+.weatherData {
+  height: 25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weatherData h2 {
+  font-size: 18px;
+  font-family: cursive;
+  font-weight: 300;
+  color: #ff5c3f;
+}
+
+.currDayData span {
+  font-size: 45px;
+  font-weight: 600;
+  color: #070307;
+}
+
+.currDayData p {
+  font-size: 18px;
+  font-family: cursive;
+  color: black;
+}
+
+.data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 2rem;
+}
+
+.cdata1,
+.cdata1 p {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.cdata2 p {
+  padding: 0.5rem;
+}
+
+.data p {
+  flex-wrap: wrap;
+}
+
+/* footer */
+
+footer {
+  /* background-image: linear-gradient(
+    102.8deg,
+    rgb(162, 190, 1) 12.3%,
+    rgb(250, 100, 0) 48.6%,
+    rgb(160, 160, 160) 85.1%
+  ); */
+
+  background-color: #d404d45e;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: rgb(17, 17, 17);
+}
+
+footer a {
+  color: rgb(19, 18, 18);
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #f58484de;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ce60d8;
+}
+
+@media (max-width: 600px) {
+  .currDayData img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .empty {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header input {
+    min-width: 240px;
+  }
+
+  .header h1 {
+    font-size: 15px;
+  }
+
+  .currDayData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .currDayData img {
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+  }
+
+  .currDayData span {
+    font-size: 35px;
+  }
+
+  .currDayData h2 p {
+    font-size: 16px;
+  }
+
+  .data {
+    /* display: block; */
+  }
+
+  .data p {
+    padding: 1rem;
+  }
+
+  .cdata2 p {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
