@@ -188,6 +188,7 @@ footer a {
 
   .header input {
     min-width: 240px;
+    margin-left: 0.5rem;
   }
 
   .header h1 {
