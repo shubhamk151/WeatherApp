@@ -53,7 +53,7 @@
 }
 
 .currDayData {
-  height: 80vh;
+  height: fit-content;
   padding-top: 4rem;
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@
 
 .currDayData img {
   height: 24rem;
-  width: 25rem;
+  width: 28rem;
   margin-left: 2rem;
   margin-bottom: 2rem;
   border-radius: 14px;
@@ -86,7 +86,7 @@
   font-size: 18px;
   font-family: cursive;
   font-weight: 300;
-  color: #ff5c3f;
+  color: #fd4524;
 }
 
 .currDayData span {
@@ -184,11 +184,12 @@ footer a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .header input {
     min-width: 240px;
-    margin-left: 0.5rem;
+    margin-left: 2rem;
   }
 
   .header h1 {
@@ -214,10 +215,6 @@ footer a {
 
   .currDayData h2 p {
     font-size: 16px;
-  }
-
-  .data {
-    /* display: block; */
   }
 
   .data p {
