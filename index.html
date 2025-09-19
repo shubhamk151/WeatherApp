@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
+    <div class="loader" id="loader"></div>
 
     <section class="header">
         <div class="logo">
@@ -20,29 +20,29 @@
         </div>
         <div class="search">
             <h1>Weather app with api integration</h1>
-            <form>
-                <input type="text" placeholder="Enter your city">
-                <button>Search</button>
+            <form id="form">
+                <input id="input" type="text" placeholder="Enter your city" />
+                <button id="btn" type="submit">Search</button>
             </form>
         </div>
         <div class="empty"></div>
-
     </section>
 
     <section class="content">
-
         <div class="currDayData">
-
             <img src="assets/snowy.jpg" />
-
             <div class="weatherData">
-                <h2>Sep 16, 07:48 am <br>
-                    <span>Mumbai, IN</span>
+                <h2 id="date">
+                    Sep 16, 07:48 am <br />
+                    <span id="location">Mumbai, IN</span>
                     <p>Feels like 24&degC. MOderate rain. Light air</p>
                 </h2>
                 <div class="data">
                     <div class="cdata1">
-                        <p><i class="fa-solid fa-cloud-sun"></i> 26&degC</p>
+                        <p>
+                            <i class="fa-solid fa-cloud-sun"></i>
+                            <span id="temp">25</span>&deg;
+                        </p>
                     </div>
                     <div class="cdata2">
                         <p><i class="fa-solid fa-wind"></i> 6.7km/h</p>
@@ -51,19 +51,20 @@
                         <p><i class="fa-solid fa-water"></i> Dew point: 22&degC</p>
                         <p><i class="fa-solid fa-eye"></i> Visibility: 1.5km</p>
                     </div>
-
                 </div>
             </div>
-
         </div>
         <div class="forecast"></div>
     </section>
     <section class="footer"></section>
 
     <footer>
-
         <a href="https://github.com/shubhamkakade151">github</a>
-        <p>Made with <i class="fa-solid fa-heart" style="color: rgb(252, 2, 2);"></i> by Shubham Kakade</p>
+        <p>
+            Made with
+            <i class="fa-solid fa-heart" style="color: rgb(252, 2, 2)"></i> by
+            Shubham Kakade
+        </p>
     </footer>
 
     <script src="script.js"></script>
