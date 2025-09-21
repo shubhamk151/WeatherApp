@@ -82,11 +82,12 @@
   align-items: center;
 }
 
-.weatherData h2 {
+#date {
   font-size: 18px;
   font-family: cursive;
   font-weight: 300;
   color: #fd4524;
+  margin-bottom: -35px;
 }
 
 .currDayData span {
@@ -97,8 +98,8 @@
 
 .currDayData p {
   font-size: 18px;
-  font-family: cursive;
   color: black;
+  font-weight: 500;
 }
 
 .data {
@@ -169,7 +170,7 @@ footer a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: spin 1s linear infinite;
+  animation: spin 0.6s linear infinite;
   display: none;
 }
 @keyframes spin {
@@ -237,6 +238,7 @@ footer a {
 
   .currDayData h2 p {
     font-size: 16px;
+    text-wrap: wrap;
   }
 
   .data p {
@@ -246,5 +248,9 @@ footer a {
   .cdata2 p {
     font-size: 14px;
     padding: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
