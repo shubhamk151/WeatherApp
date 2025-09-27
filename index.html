@@ -1,73 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <div class="loader" id="loader"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <section class="header">
-      <div class="logo">
-        <img src="assets/logo.min.svg" alt="logo" />
-      </div>
-      <div class="search">
-        <h1>Weather app with api integration</h1>
-        <form id="form">
-          <input id="input" type="text" placeholder="Enter your city" />
-          <button id="btn" type="submit">Search</button>
-        </form>
-      </div>
-      <div class="empty"></div>
-    </section>
+<body>
+  <div class="loader" id="loader"></div>
+  <section class="header">
+    <div class="logo">
+      <img src="assets/logo.min.svg" alt="logo" />
+    </div>
+    <div class="search">
+      <h1>Weather app with api integration</h1>
+      <form id="form">
+        <input id="input" type="text" placeholder="Enter your city" />
+        <button id="btn" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="empty"></div>
+  </section>
 
-    <section class="content">
-      <div class="currDayData">
-        <img id="img" src="assets/clear.jpg" />
-        <div class="weatherData">
-          <h2 >
-            <p id="date">Sep 16, 07:48 am</p> <br />
-            <span id="location">Mumbai, IN</span>
-            <p id="desc">Feels like 24&degC. MOderate rain.</p>
-          </h2>
-          <div class="data">
-            <div class="cdata1">
-              <p>
-                <i class="fa-solid fa-temperature-three-quarters" style="color: rgb(253, 68, 68);"></i><span id="temp">25&deg;C</span>
-              </p>
-            </div>
-            <div class="cdata2">
-              <p><i class="fa-solid fa-wind"></i> 6.7km/h</p>
-              <p><i class="fa-solid fa-cloud-rain"></i>rain 1.04mm</p>
-              <p><i class="fa-solid fa-cloud-sun"></i> Humidity: 94%</p>
-              <p><i class="fa-solid fa-eye"></i> Visibility: 1.5km</p>  
-            </div>
+  <section class="content">
+    <div class="currDayData">
+      <img id="img" src="assets/clear.jpg" />
+      <div class="weatherData">
+        <h2>
+          <p id="date">Sep 16, 07:48 am</p> <br />
+          <span id="location">Mumbai, IN</span>
+          <p id="desc">Feels like 24&degC. Moderate rain. wind 6.7km/h</p>
+        </h2>
+        <div class="data">
+          <div class="cdata1">
+            <p>
+              <i class="fa-solid fa-temperature-three-quarters" style="color: rgb(253, 68, 68);"></i><span
+                id="temp">25&deg;C</span>
+            </p>
+          </div>
+          <div class="cdata2">
+            <p><i class="fa-solid fa-cloud-rain"></i> rain 1.04mm</p>
+            <p><i class="fa-solid fa-cloud-sun"></i> Humidity: 94%</p>
+            <p><i class="fa-solid fa-eye"></i> Visibility: 1.5km</p>
+            <p><i class="fa-solid fa-gauge"></i> Pressure: 1013hPa</p>
           </div>
         </div>
       </div>
-      <div class="forecast"></div>
-    </section>
-    <section class="footer"></section>
+    </div>
+    <div class="forecast">
+      <div class="forecast-item">
+        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-1"></span></p>
+        <p class="p2"><span id="forecast-temp-1">22&deg;C</span></p>
+        <p class="p3"> <span id="forecast-cond-1">moderate rain</span></p>
+        <hr />
+        <p class="p4"> <span id="forecast-humidity-1"> Humidity: 93%</span><span id="forecast-wind-1"> Wind:
+            3.9m/s</span></p>
+        <p class="p5"><span id="forecast-visibility-1">Visibility: 9457 m</span></p>
+      </div>
 
-    <footer>
-      <a href="https://github.com/shubhamkakade151">github</a>
-      <p>
-        Made with
-        <i class="fa-solid fa-heart" style="color: rgb(255, 0, 0)"></i> by
-        Shubham Kakade
-      </p>
-    </footer>
+      <div class="forecast-item">
+        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-2"></span></p>
+        <p class="p2"><span id="forecast-temp-2">22&deg;C</span></p>
+        <p class="p3"> <span id="forecast-cond-2">moderate rain</span></p>
+        <hr />
+        <p class="p4"> <span id="forecast-humidity-2"> Humidity: 93%</span><span id="forecast-wind-2"> Wind:
+            3.9m/s</span></p>
+        <p class="p5"><span id="forecast-visibility-2">Visibility: 9457 m</span></p>
+      </div>
 
-    <script src="script.js"></script>
-  </body>
+      <div class="forecast-item">
+        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-3"></span></p>
+        <p class="p2"><span id="forecast-temp-3">22&deg;C</span></p>
+        <p class="p3"> <span id="forecast-cond-3">moderate rain</span></p>
+        <hr />
+        <p class="p4"> <span id="forecast-humidity-3"> Humidity: 93%</span><span id="forecast-wind-3"> Wind:
+            3.9m/s</span></p>
+        <p class="p5"><span id="forecast-visibility-3">Visibility: 9457 m</span></p>
+      </div>
+
+      <div class="forecast-item">
+        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-4"></span></p>
+        <p class="p2"><span id="forecast-temp-4">22&deg;C</span></p>
+        <p class="p3"> <span id="forecast-cond-4">moderate rain</span></p>
+        <hr />
+        <p class="p4"> <span id="forecast-humidity-4"> Humidity: 93%</span><span id="forecast-wind-4"> Wind:
+            3.9m/s</span></p>
+        <p class="p5"><span id="forecast-visibility-4">Visibility: 9457 m</span></p>
+      </div>
+
+      <div class="forecast-item">
+        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-5"></span></p>
+        <p class="p2"><span id="forecast-temp-5">22&deg;C</span></p>
+        <p class="p3"> <span id="forecast-cond-5">moderate rain</span></p>
+        <hr />
+        <p class="p4"> <span id="forecast-humidity-5"> Humidity: 93%</span><span id="forecast-wind-5"> Wind:
+            3.9m/s</span></p>
+        <p class="p5"><span id="forecast-visibility-5">Visibility: 9457 m</span></p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <a href="https://github.com/shubhamkakade151">github</a>
+    <p>
+      Made with
+      <i class="fa-solid fa-heart" style="color: rgb(255, 0, 0)"></i> by
+      Shubham Kakade
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

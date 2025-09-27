@@ -86,7 +86,6 @@ function setData(data) {
 
   const cdata2 = document.querySelector(".cdata2");
   cdata2.innerHTML = `
-  <p><i class="fa-solid fa-wind"></i> Wind: ${data.list[0].wind.speed}m/s</p>
   <p><i class="fa-solid fa-cloud-rain"></i> Rain: ${
     data.list[0].rain ? data.list[0].rain["3h"] : 0
   }mm</p>
@@ -112,5 +111,86 @@ function setData(data) {
     img.src = "assets/snowy.jpg";
   } else {
     img.src = "assets/clear.jpg";
+  }
+
+  // forecast data
+  //day one
+  let forecastDate = document.getElementById("forecast-date-1");
+  let name = new Date(data.list[9].dt * 1000);
+  const options1 = { month: "short", day: "numeric", year: "numeric" };
+  forecastDate.innerText = name.toLocaleDateString("en-US", options1);
+  let forecastTemp = document.getElementById("forecast-temp-1");
+  forecastTemp.innerText = `${Math.round(data.list[9].main.temp - 273.15)}°C`;
+  let forecastDesc = document.getElementById("forecast-cond-1");
+  forecastDesc.innerText = data.list[9].weather[0].description;
+  let forecastHumidity = document.getElementById("forecast-humidity-1");
+  forecastHumidity.innerText = `Humidity: ${data.list[9].main.humidity}%`;
+  let forecastVisibility = document.getElementById("forecast-visibility-1");
+  forecastVisibility.innerText = `Visibility: ${data.list[9].visibility} m`;
+  let forecastWind = document.getElementById("forecast-wind-1");
+  forecastWind.innerText = `Wind: ${data.list[9].wind.speed} m/s`;
+
+  //day two
+  let forecastDate2 = document.getElementById("forecast-date-2");
+  let name2 = new Date(data.list[16].dt * 1000);
+  forecastDate2.innerText = name2.toLocaleDateString("en-US", options1);
+  let forecastTemp2 = document.getElementById("forecast-temp-2");
+  forecastTemp2.innerText = `${Math.round(data.list[16].main.temp - 273.15)}°C`;
+  let forecastDesc2 = document.getElementById("forecast-cond-2");
+  forecastDesc2.innerText = data.list[16].weather[0].description;
+  let forecastHumidity2 = document.getElementById("forecast-humidity-2");
+  forecastHumidity2.innerText = `Humidity: ${data.list[16].main.humidity}%`;
+  let forecastVisibility2 = document.getElementById("forecast-visibility-2");
+  forecastVisibility2.innerText = `Visibility: ${data.list[16].visibility} m`;
+  let forecastWind2 = document.getElementById("forecast-wind-2");
+  forecastWind2.innerText = `Wind: ${data.list[16].wind.speed} m/s`;
+
+  //day three
+  let forecastDate3 = document.getElementById("forecast-date-3");
+  let name3 = new Date(data.list[25].dt * 1000);
+  forecastDate3.innerText = name3.toLocaleDateString("en-US", options1);
+  let forecastTemp3 = document.getElementById("forecast-temp-3");
+  forecastTemp3.innerText = `${Math.round(data.list[25].main.temp - 273.15)}°C`;
+  let forecastDesc3 = document.getElementById("forecast-cond-3");
+  forecastDesc3.innerText = data.list[25].weather[0].description;
+  let forecastHumidity3 = document.getElementById("forecast-humidity-3");
+  forecastHumidity3.innerText = `Humidity: ${data.list[25].main.humidity}%`;
+  let forecastVisibility3 = document.getElementById("forecast-visibility-3");
+  forecastVisibility3.innerText = `Visibility: ${data.list[25].visibility} m`;
+  let forecastWind3 = document.getElementById("forecast-wind-3");
+  forecastWind3.innerText = `Wind: ${data.list[25].wind.speed} m/s`;
+
+  //day four
+  let forecastDate4 = document.getElementById("forecast-date-4");
+  let name4 = new Date(data.list[33].dt * 1000);
+  forecastDate4.innerText = name4.toLocaleDateString("en-US", options1);
+  let forecastTemp4 = document.getElementById("forecast-temp-4");
+  forecastTemp4.innerText = `${Math.round(data.list[33].main.temp - 273.15)}°C`;
+  let forecastDesc4 = document.getElementById("forecast-cond-4");
+  forecastDesc4.innerText = data.list[33].weather[0].description;
+  let forecastHumidity4 = document.getElementById("forecast-humidity-4");
+  forecastHumidity4.innerText = `Humidity: ${data.list[33].main.humidity}%`;
+  let forecastVisibility4 = document.getElementById("forecast-visibility-4");
+  forecastVisibility4.innerText = `Visibility: ${data.list[33].visibility} m`;
+  let forecastWind4 = document.getElementById("forecast-wind-4");
+  forecastWind4.innerText = `Wind: ${data.list[33].wind.speed} m/s`;
+
+  //day five
+  let forecastDate5 = document.getElementById("forecast-date-5");
+  let name5 = new Date(data.list[38].dt * 1000);
+  forecastDate5.innerText = name5.toLocaleDateString("en-US", options1);
+  let forecastTemp5 = document.getElementById("forecast-temp-5");
+  forecastTemp5.innerText = `${Math.round(data.list[38].main.temp - 273.15)}°C`;
+  let forecastDesc5 = document.getElementById("forecast-cond-5");
+  forecastDesc5.innerText = data.list[38].weather[0].description;
+  let forecastHumidity5 = document.getElementById("forecast-humidity-5");
+  forecastHumidity5.innerText = `Humidity: ${data.list[38].main.humidity}%`;
+  let forecastVisibility5 = document.getElementById("forecast-visibility-5");
+  forecastVisibility5.innerText = `Visibility: ${data.list[38].visibility} m`;
+  let forecastWind5 = document.getElementById("forecast-wind-5");
+  forecastWind5.innerText = `Wind: ${data.list[38].wind.speed} m/s`;
+
+  for (let i = 0; i <= 39; i++) {
+    console.log(`index: ${i}`, new Date(data.list[i].dt * 1000));
   }
 }

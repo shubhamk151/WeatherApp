@@ -54,7 +54,6 @@
 
 .currDayData {
   height: fit-content;
-  padding-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -69,9 +68,11 @@
 .currDayData img {
   height: 24rem;
   width: 28rem;
+  margin-top: 2rem;
   margin-left: 2rem;
   margin-bottom: 2rem;
   border-radius: 14px;
+  border: 2px solid #00000029;
 }
 
 .weatherData {
@@ -83,11 +84,11 @@
 }
 
 #date {
-  font-size: 18px;
-  font-family: cursive;
-  font-weight: 300;
-  color: #fd4524;
-  margin-bottom: -35px;
+  font-size: 21px;
+  font-weight: 500;
+  color: #ff0000;
+  margin-bottom: -40px;
+  margin-top: 1rem;
 }
 
 .currDayData span {
@@ -120,10 +121,87 @@
 
 .cdata2 p {
   padding: 0.5rem;
+  font-weight: 400;
 }
 
 .data p {
   flex-wrap: wrap;
+}
+
+/* forecast */
+
+.forecast {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background-image: linear-gradient(
+    102.8deg,
+    rgba(140, 235, 252, 1) 12.3%,
+    rgba(248, 193, 232, 1) 48.6%,
+    rgba(252, 244, 211, 1) 85.1%
+  );
+}
+
+.forecast-item {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(170, 245, 248, 1) 0%,
+    rgba(248, 162, 239, 0.8) 90%
+  );
+}
+
+.forecast-item:nth-child(even) {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(248, 162, 239, 0.8) 0%,
+    rgba(133, 246, 250, 0.856) 90%
+  );
+}
+
+.forecast-item .p1 i {
+  margin-right: 1rem;
+  font-size: 30px;
+  opacity: 0.8;
+}
+
+.forecast-item p {
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-item .p1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.forecast-item .p2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.forecast-item .p3 {
+  line-height: 5px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.forecast-item .p4 span {
+  font-size: 14px;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.forecast-item .p5 {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* footer */
@@ -245,9 +323,22 @@ footer a {
     padding: 1rem;
   }
 
+  .cdata1 p {
+    margin-left: -3rem;
+  }
+
   .cdata2 p {
     font-size: 14px;
     padding: 10px;
+  }
+
+  .forecast {
+    flex-direction: column;
+  }
+  .forecast-item {
+    min-width: 300px;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   ::-webkit-scrollbar {
