@@ -18,7 +18,6 @@
       <img src="assets/logo.min.svg" alt="logo" />
     </div>
     <div class="search">
-      <h1>Weather app with api integration</h1>
       <form id="form">
         <input id="input" type="text" placeholder="Enter your city" />
         <button id="btn" type="submit">Search</button>
@@ -39,8 +38,7 @@
         <div class="data">
           <div class="cdata1">
             <p>
-              <i class="fa-solid fa-temperature-three-quarters" style="color: rgb(253, 68, 68);"></i><span
-                id="temp">25&deg;C</span>
+              <i id="icon" class="fa-solid fa-cloud-sun"></i><span id="temp">25&deg;C</span>
             </p>
           </div>
           <div class="cdata2">
@@ -54,7 +52,8 @@
     </div>
     <div class="forecast">
       <div class="forecast-item">
-        <p class="p1"><i class="fa-solid fa-cloud-sun"></i> <span id="forecast-date-1"></span></p>
+        <p class="p1"><span id="forecast-icon"><i class="fa-solid fa-cloud-sun"></i></span> <span
+            id="forecast-date-1"></span></p>
         <p class="p2"><span id="forecast-temp-1">22&deg;C</span></p>
         <p class="p3"> <span id="forecast-cond-1">moderate rain</span></p>
         <hr />

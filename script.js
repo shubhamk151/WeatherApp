@@ -81,8 +81,28 @@ function setData(data) {
     data.list[0].wind.speed
   }m/s`;
 
-  const temp = document.getElementById("temp");
-  temp.innerText = `${Math.round(data.list[0].main.temp - 273.15)}°C`;
+  let cdata1 = document.getElementsByClassName("cdata1");
+  if (data.list[0].weather[0].main === "Rain") {
+    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud-rain"></i> <span>${Math.round(
+      data.list[0].main.temp - 273.15
+    )}°C</span>`;
+  } else if (data.list[0].weather[0].main === "Clouds") {
+    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud"></i> <span>${Math.round(
+      data.list[0].main.temp - 273.15
+    )}°C</span>`;
+  } else if (data.list[0].weather[0].main === "Wind") {
+    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-wind"></i> <span>${Math.round(
+      data.list[0].main.temp - 273.15
+    )}°C</span>`;
+  } else if (data.list[0].weather[0].main === "Snow") {
+    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-snowflake"></i> <span>${Math.round(
+      data.list[0].main.temp - 273.15
+    )}°C</span>`;
+  } else {
+    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud-sun"></i> <span>${Math.round(
+      data.list[0].main.temp - 273.15
+    )}°C</span>`;
+  }
 
   const cdata2 = document.querySelector(".cdata2");
   cdata2.innerHTML = `
@@ -115,6 +135,24 @@ function setData(data) {
 
   // forecast data
   //day one
+  // let forecastIcon = document.getElementById("forecast-icon");
+
+  // if (data.list[9].weather[0].main === "Cloudes") {
+  //   forecastIcon.innerHTML = <i class="fa-solid fa-cloud"></i>;
+  // }
+  // else if (data.list[9].weather[0].main === "Rain") {
+  //   forecastIcon.innerText = <i class="fa-solid fa-cloud-rain"></i>;
+  // }
+  // else if (data.list[9].weather[0].main === "Wind") {
+  //   forecastIcon.innerText = <i class="fa-solid fa-wind"></i>;
+  // }
+  //  else if (data.list[9].weather[0].main === "Snow") {
+  //   forecastIcon.innerText = <i class="fa-solid fa-snowflake"></i>;
+  // }
+  //  else {
+  //   forecastIcon.innerText = <i class="fa-solid fa-cloud-sun"></i>;
+  // }
+
   let forecastDate = document.getElementById("forecast-date-1");
   let name = new Date(data.list[9].dt * 1000);
   const options1 = { month: "short", day: "numeric", year: "numeric" };
@@ -131,6 +169,7 @@ function setData(data) {
   forecastWind.innerText = `Wind: ${data.list[9].wind.speed} m/s`;
 
   //day two
+
   let forecastDate2 = document.getElementById("forecast-date-2");
   let name2 = new Date(data.list[16].dt * 1000);
   forecastDate2.innerText = name2.toLocaleDateString("en-US", options1);
@@ -146,6 +185,7 @@ function setData(data) {
   forecastWind2.innerText = `Wind: ${data.list[16].wind.speed} m/s`;
 
   //day three
+
   let forecastDate3 = document.getElementById("forecast-date-3");
   let name3 = new Date(data.list[25].dt * 1000);
   forecastDate3.innerText = name3.toLocaleDateString("en-US", options1);
@@ -161,6 +201,7 @@ function setData(data) {
   forecastWind3.innerText = `Wind: ${data.list[25].wind.speed} m/s`;
 
   //day four
+
   let forecastDate4 = document.getElementById("forecast-date-4");
   let name4 = new Date(data.list[33].dt * 1000);
   forecastDate4.innerText = name4.toLocaleDateString("en-US", options1);
@@ -176,6 +217,7 @@ function setData(data) {
   forecastWind4.innerText = `Wind: ${data.list[33].wind.speed} m/s`;
 
   //day five
+
   let forecastDate5 = document.getElementById("forecast-date-5");
   let name5 = new Date(data.list[38].dt * 1000);
   forecastDate5.innerText = name5.toLocaleDateString("en-US", options1);
@@ -189,8 +231,4 @@ function setData(data) {
   forecastVisibility5.innerText = `Visibility: ${data.list[38].visibility} m`;
   let forecastWind5 = document.getElementById("forecast-wind-5");
   forecastWind5.innerText = `Wind: ${data.list[38].wind.speed} m/s`;
-
-  for (let i = 0; i <= 39; i++) {
-    console.log(`index: ${i}`, new Date(data.list[i].dt * 1000));
-  }
 }

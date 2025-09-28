@@ -14,7 +14,6 @@
     rgba(170, 245, 248, 1) 0%,
     rgba(248, 162, 239, 0.8) 90%
   );
-  line-height: 2.5;
 }
 
 .logo {
@@ -24,14 +23,11 @@
 }
 
 .header form {
-  padding-bottom: 20px;
-  margin-left: -2rem;
+  margin-left: -2rem; 
+  padding: 1.3rem;
 }
 
-.header h1 {
-  margin-left: -2rem;
-  font-family: cursive;
-}
+
 
 .header input {
   padding: 12px 16px;
@@ -76,10 +72,11 @@
 }
 
 .weatherData {
-  height: 25rem;
+  height: fit-content;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
 }
 
@@ -92,7 +89,7 @@
 }
 
 .currDayData span {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 600;
   color: #070307;
 }
@@ -111,6 +108,7 @@
   align-items: center;
   justify-content: space-around;
   padding-left: 2rem;
+  margin-top: 3rem;
 }
 
 .cdata1,
@@ -282,7 +280,6 @@ footer a {
 
   .search {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -305,9 +302,9 @@ footer a {
   }
 
   .currDayData img {
-    width: 300px;
+    width: 370px;
     height: 300px;
-    margin-left: 0;
+    margin: 1rem 0 0 0;
   }
 
   .currDayData span {
@@ -319,9 +316,22 @@ footer a {
     text-wrap: wrap;
   }
 
+  #location {
+    margin-top: 5px;
+  }
+
+  .data{
+    height: fit-content;
+    margin: 1.5rem 0;
+  }
+
   .data p {
     padding: 1rem;
   }
+
+.cdata1 span{
+    font-size: 50px;
+}
 
   .cdata1 p {
     margin-left: -3rem;
@@ -334,6 +344,7 @@ footer a {
 
   .forecast {
     flex-direction: column;
+    padding-top: 1rem;
   }
   .forecast-item {
     min-width: 300px;
