@@ -137,9 +137,6 @@
     rgba(248, 193, 232, 1) 48.6%,
     rgba(252, 244, 211, 1) 85.1%
   );
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
 }
 
 .forecast-item {

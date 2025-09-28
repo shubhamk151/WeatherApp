@@ -24,7 +24,7 @@ const weatherData = async () => {
     console.log(data);
     setData(data);
   } catch (err) {
-    console.error(err);
+    alert("City not found. please try again!");
   }
 };
 
@@ -51,7 +51,7 @@ function geoFindMe() {
         setData(data);
         loader.style.display = "none";
       } catch (err) {
-        console.error(err);
+        alert("City not found please try again");
       }
     };
 
@@ -135,24 +135,6 @@ function setData(data) {
 
   // forecast data
   //day one
-  // let forecastIcon = document.getElementById("forecast-icon");
-
-  // if (data.list[9].weather[0].main === "Cloudes") {
-  //   forecastIcon.innerHTML = <i class="fa-solid fa-cloud"></i>;
-  // }
-  // else if (data.list[9].weather[0].main === "Rain") {
-  //   forecastIcon.innerText = <i class="fa-solid fa-cloud-rain"></i>;
-  // }
-  // else if (data.list[9].weather[0].main === "Wind") {
-  //   forecastIcon.innerText = <i class="fa-solid fa-wind"></i>;
-  // }
-  //  else if (data.list[9].weather[0].main === "Snow") {
-  //   forecastIcon.innerText = <i class="fa-solid fa-snowflake"></i>;
-  // }
-  //  else {
-  //   forecastIcon.innerText = <i class="fa-solid fa-cloud-sun"></i>;
-  // }
-
   let forecastDate = document.getElementById("forecast-date-1");
   let name = new Date(data.list[9].dt * 1000);
   const options1 = { month: "short", day: "numeric", year: "numeric" };
@@ -169,7 +151,6 @@ function setData(data) {
   forecastWind.innerText = `Wind: ${data.list[9].wind.speed} m/s`;
 
   //day two
-
   let forecastDate2 = document.getElementById("forecast-date-2");
   let name2 = new Date(data.list[16].dt * 1000);
   forecastDate2.innerText = name2.toLocaleDateString("en-US", options1);
@@ -185,7 +166,6 @@ function setData(data) {
   forecastWind2.innerText = `Wind: ${data.list[16].wind.speed} m/s`;
 
   //day three
-
   let forecastDate3 = document.getElementById("forecast-date-3");
   let name3 = new Date(data.list[25].dt * 1000);
   forecastDate3.innerText = name3.toLocaleDateString("en-US", options1);
@@ -201,7 +181,6 @@ function setData(data) {
   forecastWind3.innerText = `Wind: ${data.list[25].wind.speed} m/s`;
 
   //day four
-
   let forecastDate4 = document.getElementById("forecast-date-4");
   let name4 = new Date(data.list[33].dt * 1000);
   forecastDate4.innerText = name4.toLocaleDateString("en-US", options1);
