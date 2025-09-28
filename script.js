@@ -4,6 +4,8 @@ const loader = document.getElementById("loader");
 let city;
 let data;
 
+geoFindMe();
+
 form.addEventListener("submit", async (e) => {
   loader.style.display = "block";
   e.preventDefault();
@@ -58,7 +60,6 @@ function geoFindMe() {
     weatherData();
   });
 }
-geoFindMe();
 
 function setData(data) {
   const date = document.getElementById("date");
@@ -67,7 +68,7 @@ function setData(data) {
   date.innerText = `${now.toLocaleDateString(
     "en-US",
     options
-  )}, ${now.getHours()}:${now.getMinutes()} ${
+  )}, ${now.getHours() % 12 || 12}:${now.getMinutes().toString().padStart(2, "0")} ${
     now.getHours() >= 12 ? "pm" : "am"
   }`;
 
