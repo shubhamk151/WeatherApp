@@ -300,9 +300,13 @@ footer a {
   }
 
   .currDayData img {
-    width: 350px;
+    width: 330px;
     height: 300px;
     margin: 1rem 0 0 0;
+  }
+
+  #date {
+    font-size: 16px;
   }
 
   .currDayData span {
@@ -332,7 +336,7 @@ footer a {
   }
 
   .cdata1 p {
-    margin-left: -3rem;
+    margin-left: -1.5rem;
   }
 
   .cdata2 p {
