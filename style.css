@@ -109,10 +109,19 @@
   margin-top: 3rem;
 }
 
-.cdata1,
+.cdata1 {
+  display: flex;
+  align-items: center;
+}
 .cdata1 p {
   font-size: 40px;
   font-weight: 100;
+}
+
+.cdata1 img {
+  height: 80px;
+  width: 80px;
+  border: none;
 }
 
 .cdata2 p {
@@ -162,10 +171,11 @@
   );
 }
 
-.forecast-item .p1 i {
-  margin-right: 1rem;
-  font-size: 30px;
+.forecast-item img {
   opacity: 0.8;
+  height: 70px;
+  width: 70px;
+  margin-right: 5rem;
 }
 
 .forecast-item p {
@@ -173,14 +183,17 @@
   justify-content: center;
 }
 
-.forecast-item .p1 {
-  font-size: 20px;
+.forecast-item .p1 span {
+  font-size: 17px;
   font-weight: 500;
+  margin-top: 1.7rem;
+  margin-left: -4.8rem;
 }
 
 .forecast-item .p2 {
   font-size: 40px;
   font-weight: 600;
+  margin-top: -1rem;
 }
 
 .forecast-item .p3 {
@@ -333,6 +346,11 @@ footer a {
     padding: 1rem;
   }
 
+  .cdata1 img {
+    height: 70px;
+    width: 70px;
+  }
+
   .cdata1 span {
     font-size: 40px;
   }
@@ -354,6 +372,15 @@ footer a {
     min-width: 300px;
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .forecast-item img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .forecast-item .p1 span {
+    margin-top: 1.2rem;
   }
 
   ::-webkit-scrollbar {

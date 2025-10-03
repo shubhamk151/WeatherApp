@@ -27,6 +27,7 @@ const weatherData = async () => {
     setData(data);
   } catch (err) {
     alert("City not found. please try again!");
+    console.log(err);
   }
 };
 
@@ -54,6 +55,7 @@ function geoFindMe() {
         loader.style.display = "none";
       } catch (err) {
         alert("City not found please try again");
+        console.log(err);
       }
     };
 
@@ -65,10 +67,9 @@ function setData(data) {
   const date = document.getElementById("date");
   const options = { month: "short", day: "numeric" };
   const now = new Date();
-  date.innerText = `${now.toLocaleDateString(
-    "en-US",
-    options
-  )}, ${now.getHours() % 12 || 12}:${now.getMinutes().toString().padStart(2, "0")} ${
+  date.innerText = `${now.toLocaleDateString("en-US", options)}, ${
+    now.getHours() % 12 || 12
+  }:${now.getMinutes().toString().padStart(2, "0")} ${
     now.getHours() >= 12 ? "pm" : "am"
   }`;
 
@@ -82,27 +83,14 @@ function setData(data) {
     data.list[0].wind.speed
   }m/s`;
 
-  let cdata1 = document.getElementsByClassName("cdata1");
-  if (data.list[0].weather[0].main === "Rain") {
-    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud-rain"></i> <span>${Math.round(
-      data.list[0].main.temp - 273.15
-    )}°C</span>`;
-  } else if (data.list[0].weather[0].main === "Clouds") {
-    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud"></i> <span>${Math.round(
-      data.list[0].main.temp - 273.15
-    )}°C</span>`;
-  } else if (data.list[0].weather[0].main === "Wind") {
-    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-wind"></i> <span>${Math.round(
-      data.list[0].main.temp - 273.15
-    )}°C</span>`;
-  } else if (data.list[0].weather[0].main === "Snow") {
-    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-snowflake"></i> <span>${Math.round(
-      data.list[0].main.temp - 273.15
-    )}°C</span>`;
+  let cicon = document.getElementById("cicon");
+  if (
+    data.list[0].weather[0].icon === "01n" ||
+    data.list[0].weather[0].icon === undefined
+  ) {
+    cicon.innerHTML = `<img src="http://openweathermap.org/img/wn/02d@2x.png" alt="icon">`;
   } else {
-    cdata1[0].innerHTML = `<p> <i class="fa-solid fa-cloud-sun"></i> <span>${Math.round(
-      data.list[0].main.temp - 273.15
-    )}°C</span>`;
+    cicon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="icon">`;
   }
 
   const cdata2 = document.querySelector(".cdata2");
@@ -136,10 +124,17 @@ function setData(data) {
 
   // forecast data
   //day one
-  let forecastDate = document.getElementById("forecast-date-1");
-  let name = new Date(data.list[9].dt * 1000);
+
+  let date1 = new Date(data.list[9].dt * 1000);
   const options1 = { month: "short", day: "numeric", year: "numeric" };
-  forecastDate.innerText = name.toLocaleDateString("en-US", options1);
+  let forecastIcon = document.getElementById("forecast-icon-1");
+  forecastIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${
+    data.list[9].weather[0].icon
+  }@2x.png" alt="icon"> <span>${date1.toLocaleDateString(
+    "en-US",
+    options1
+  )}</span>`;
+
   let forecastTemp = document.getElementById("forecast-temp-1");
   forecastTemp.innerText = `${Math.round(data.list[9].main.temp - 273.15)}°C`;
   let forecastDesc = document.getElementById("forecast-cond-1");
@@ -152,9 +147,15 @@ function setData(data) {
   forecastWind.innerText = `Wind: ${data.list[9].wind.speed} m/s`;
 
   //day two
-  let forecastDate2 = document.getElementById("forecast-date-2");
-  let name2 = new Date(data.list[16].dt * 1000);
-  forecastDate2.innerText = name2.toLocaleDateString("en-US", options1);
+  let date2 = new Date(data.list[16].dt * 1000);
+  let forecastIcon2 = document.getElementById("forecast-icon-2");
+  forecastIcon2.innerHTML = `<img src="http://openweathermap.org/img/wn/${
+    data.list[16].weather[0].icon
+  }@2x.png" alt="icon"> <span>${date2.toLocaleDateString(
+    "en-US",
+    options1
+  )}</span>`;
+
   let forecastTemp2 = document.getElementById("forecast-temp-2");
   forecastTemp2.innerText = `${Math.round(data.list[16].main.temp - 273.15)}°C`;
   let forecastDesc2 = document.getElementById("forecast-cond-2");
@@ -167,9 +168,15 @@ function setData(data) {
   forecastWind2.innerText = `Wind: ${data.list[16].wind.speed} m/s`;
 
   //day three
-  let forecastDate3 = document.getElementById("forecast-date-3");
-  let name3 = new Date(data.list[25].dt * 1000);
-  forecastDate3.innerText = name3.toLocaleDateString("en-US", options1);
+  let date3 = new Date(data.list[25].dt * 1000);
+  let forecastIcon3 = document.getElementById("forecast-icon-3");
+  forecastIcon3.innerHTML = `<img src="http://openweathermap.org/img/wn/${
+    data.list[25].weather[0].icon
+  }@2x.png" alt="icon"> <span>${date3.toLocaleDateString(
+    "en-US",
+    options1
+  )}</span>`;
+
   let forecastTemp3 = document.getElementById("forecast-temp-3");
   forecastTemp3.innerText = `${Math.round(data.list[25].main.temp - 273.15)}°C`;
   let forecastDesc3 = document.getElementById("forecast-cond-3");
@@ -182,9 +189,15 @@ function setData(data) {
   forecastWind3.innerText = `Wind: ${data.list[25].wind.speed} m/s`;
 
   //day four
-  let forecastDate4 = document.getElementById("forecast-date-4");
-  let name4 = new Date(data.list[33].dt * 1000);
-  forecastDate4.innerText = name4.toLocaleDateString("en-US", options1);
+  let date4 = new Date(data.list[33].dt * 1000);
+  let forecastIcon4 = document.getElementById("forecast-icon-4");
+  forecastIcon4.innerHTML = `<img src="http://openweathermap.org/img/wn/${
+    data.list[33].weather[0].icon
+  }@2x.png" alt="icon"> <span>${date4.toLocaleDateString(
+    "en-US",
+    options1
+  )}</span>`;
+
   let forecastTemp4 = document.getElementById("forecast-temp-4");
   forecastTemp4.innerText = `${Math.round(data.list[33].main.temp - 273.15)}°C`;
   let forecastDesc4 = document.getElementById("forecast-cond-4");
@@ -197,10 +210,15 @@ function setData(data) {
   forecastWind4.innerText = `Wind: ${data.list[33].wind.speed} m/s`;
 
   //day five
-
-  let forecastDate5 = document.getElementById("forecast-date-5");
-  let name5 = new Date(data.list[38].dt * 1000);
-  forecastDate5.innerText = name5.toLocaleDateString("en-US", options1);
+ let date5 = new Date(data.list[38].dt * 1000);
+  let forecastIcon5 = document.getElementById("forecast-icon-5");
+  forecastIcon5.innerHTML = `<img src="http://openweathermap.org/img/wn/${
+    data.list[38].weather[0].icon
+  }@2x.png" alt="icon"> <span>${date5.toLocaleDateString(
+    "en-US",
+    options1
+  )}</span>`;
+  
   let forecastTemp5 = document.getElementById("forecast-temp-5");
   forecastTemp5.innerText = `${Math.round(data.list[38].main.temp - 273.15)}°C`;
   let forecastDesc5 = document.getElementById("forecast-cond-5");
