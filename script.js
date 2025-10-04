@@ -50,7 +50,6 @@ function geoFindMe() {
           `https://api.openweathermap.org/data/2.5/forecast?q=${data.city}&appid=${APIKEY}`
         );
         data = await response.json();
-        console.log(data);
         setData(data);
         loader.style.display = "none";
       } catch (err) {
@@ -92,6 +91,9 @@ function setData(data) {
   } else {
     cicon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png" alt="icon">`;
   }
+
+  const temp = document.getElementById("temp");
+  temp.innerText = `${Math.round(data.list[0].main.temp - 273.15)}°C`;
 
   const cdata2 = document.querySelector(".cdata2");
   cdata2.innerHTML = `
@@ -210,7 +212,7 @@ function setData(data) {
   forecastWind4.innerText = `Wind: ${data.list[33].wind.speed} m/s`;
 
   //day five
- let date5 = new Date(data.list[38].dt * 1000);
+  let date5 = new Date(data.list[38].dt * 1000);
   let forecastIcon5 = document.getElementById("forecast-icon-5");
   forecastIcon5.innerHTML = `<img src="http://openweathermap.org/img/wn/${
     data.list[38].weather[0].icon
@@ -218,7 +220,7 @@ function setData(data) {
     "en-US",
     options1
   )}</span>`;
-  
+
   let forecastTemp5 = document.getElementById("forecast-temp-5");
   forecastTemp5.innerText = `${Math.round(data.list[38].main.temp - 273.15)}°C`;
   let forecastDesc5 = document.getElementById("forecast-cond-5");
